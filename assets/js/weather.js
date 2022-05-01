@@ -3,6 +3,19 @@ function homeScreen() {
     document.getElementById("locationInput").defaultValue = "Irvine";
     InfoContainer();
 }
+
+//Display current time and day 
+var displayCurrentDay = document.getElementById("currentDay");
+
+//function to displayTime
+function displayTime(){
+    displayCurrentDay.textContent = new Date().toLocaleString();
+    setTimeout(displayTime, 1000);
+}
+
+displayTime();
+
+
 //function to get Weather API info for the click button
 
 function InfoContainer() {
@@ -41,7 +54,7 @@ function InfoContainer() {
 
              // Displaying the High Temp for each day
 
-                document.getElementById("day" + (i + 1) + "High").innerHTML = "High: " + Number(fhighTemp).toFixed(1) + "°";
+                document.getElementById("day" + (i + 1) + "High").innerHTML = "Highest: " + Number(fhighTemp).toFixed(1) + "°";
         }
 
         //Gather and display weather icons from API, depending on conditions
@@ -53,13 +66,21 @@ function InfoContainer() {
         // Gather and display humidity
         for (i = 0; i < 5; i++){
             document.getElementById("day" + (i + 1) + "Humid").innerHTML = "Humidity: " + Number(data.list[i].main.humidity).toFixed(1) + "%";
+            console.log(data.list[i].main.humidity)
 
         }
         // Gather and display windspeed
         for (i = 0; i < 5; i++){
+
+            //converting m/s to m/h
+
+            var milesHour = data.list[i].wind.speed;
+               console.log(milesHour);
+               var windSpeed = (milesHour*2.237)
+            console.log(windSpeed)
+
+            document.getElementById("day" + (i + 1) + "Wind").innerHTML = "Wind Speed: " + Number(windSpeed).toFixed(1) + "m/h";
         }
-
-
 
     })
 
