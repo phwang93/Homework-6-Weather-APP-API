@@ -30,7 +30,7 @@ function InfoContainer() {
     .then(data => {
         
         //Getting the temps(min,max) for each day
-        for(i =0; i < 5; i++) {
+        for(i =0; i < 6; i++) {
             // Transforming temp K to F - Low Temp
             var lowTemp = data.list[i].main.temp_min;
             console.log(lowTemp);
@@ -43,7 +43,7 @@ function InfoContainer() {
             document.getElementById("day" + (i + 1) + "Low").innerHTML = "Low: " + Number(flowTemp).toFixed(1) + "°";
         }
 
-        for(i =0; i < 5; i++) {
+        for(i =0; i < 6; i++) {
 
              // Transforming temp K to F - High Temp
 
@@ -58,19 +58,19 @@ function InfoContainer() {
         }
 
         //Gather and display weather icons from API, depending on conditions
-        for (i = 0; i < 5; i++){
+        for (i = 0; i < 6; i++){
             document.getElementById("img" + (i+1)).src = "http://openweathermap.org/img/wn/" + 
             data.list[i].weather[0].icon + ".png";
         }
        
         // Gather and display humidity
-        for (i = 0; i < 5; i++){
+        for (i = 0; i < 6; i++){
             document.getElementById("day" + (i + 1) + "Humid").innerHTML = "Humidity: " + Number(data.list[i].main.humidity).toFixed(1) + "%";
             console.log(data.list[i].main.humidity)
 
         }
         // Gather and display windspeed
-        for (i = 0; i < 5; i++){
+        for (i = 0; i < 6; i++){
 
             //converting m/s to m/h
 
@@ -102,7 +102,7 @@ function CheckDay(day){
     }
 }
 
-for (i = 0; i < 5; i++) {
+for (i = 0; i < 6; i++) {
     document.getElementById("day" + (i + 1)).innerHTML = weekDay[CheckDay(i)];
 }
 
