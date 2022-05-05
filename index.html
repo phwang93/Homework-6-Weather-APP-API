@@ -7,13 +7,20 @@
     <link rel="stylesheet" href="./assets/css/style.css">
     <title>What's the Weather Like?</title>
 </head>
-<body onload = "homeScreen()" background="./assets/image/background.jpg">
+<body onload = "homeScreen()">
+    <div id="infocontainer">
     <h1 id="title">What's the Weather like?</h1>
     <p id="searchContainer">Location: <input type="text" id="locationInput"></p>
     <p id="currentDay" class="lead"></p>
     <button type="button" onclick="InfoContainer()"> Search </button>
     <h2 id="locationName">Location</h2>
-    <div id="currentWeather">
+    <div class="history">
+        <h3> Previous Searches </h3>
+    </div>
+    </div>
+
+    <div id="currentcontainer">
+        <h4> Current Weather </h4>
         <div id="icons">
             <div class="icon">
                 <p class="weather" id="day1"></p>
@@ -26,7 +33,7 @@
         </div>
     </div>
     
-    <div id="weathers">
+    <div id="weatherscontainer">
         <div id="icons">
             <div class="icon">
                 <p class="weather" id="day2"></p>
@@ -37,6 +44,9 @@
                 <p class="wind" id="day2Wind">Gathering...</p>
             </div>
         </div>
+
+    </div>
+        <div id="weatherscontainer">
         <div id="icons">
             <div class="icon">
                 <p class="weather" id="day3"></p>
@@ -47,6 +57,8 @@
                 <p class="wind" id="day3Wind">Gathering...</p>
             </div>
         </div>
+    </div>
+    <div id="weatherscontainer">
         <div id="icons">
             <div class="icon">
                 <p class="weather" id="day4"></p>
@@ -57,6 +69,9 @@
                 <p class="wind" id="day4Wind">Gathering...</p>
             </div>
         </div>
+    </div>
+    
+    <div id="weatherscontainer">
         <div id="icons">
             <div class="icon">
                 <p class="weather" id="day5"></p>
@@ -67,6 +82,9 @@
                 <p class="wind" id="day5Wind">Gathering...</p>
             </div>
         </div>
+    </div>
+
+    <div id="weatherscontainer">
         <div id="icons">
             <div class="icon">
                 <p class="weather" id="day6"></p>

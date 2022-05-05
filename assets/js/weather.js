@@ -33,9 +33,9 @@ function InfoContainer() {
         for(i =0; i < 6; i++) {
             // Transforming temp K to F - Low Temp
             var lowTemp = data.list[i].main.temp_min;
-            console.log(lowTemp);
+            //console.log(lowTemp);
             var flowTemp = ((lowTemp-273.15)*1.8)+32
-            console.log(flowTemp)
+            //console.log(flowTemp)
             
             
             // Displaying the High Temp for each day
@@ -48,9 +48,9 @@ function InfoContainer() {
              // Transforming temp K to F - High Temp
 
               var highTemp = data.list[i].main.temp_max;
-               console.log(highTemp);
+               //console.log(highTemp);
                var fhighTemp = ((highTemp-273.15)*1.8)+32
-                console.log(fhighTemp)
+               // console.log(fhighTemp)
 
              // Displaying the High Temp for each day
 
@@ -66,7 +66,7 @@ function InfoContainer() {
         // Gather and display humidity
         for (i = 0; i < 6; i++){
             document.getElementById("day" + (i + 1) + "Humid").innerHTML = "Humidity: " + Number(data.list[i].main.humidity).toFixed(1) + "%";
-            console.log(data.list[i].main.humidity)
+            //console.log(data.list[i].main.humidity)
 
         }
         // Gather and display windspeed
@@ -75,9 +75,9 @@ function InfoContainer() {
             //converting m/s to m/h
 
             var milesHour = data.list[i].wind.speed;
-               console.log(milesHour);
+               //console.log(milesHour);
                var windSpeed = (milesHour*2.237)
-            console.log(windSpeed)
+            //console.log(windSpeed)
 
             document.getElementById("day" + (i + 1) + "Wind").innerHTML = "Wind Speed: " + Number(windSpeed).toFixed(1) + "m/h";
         }
@@ -85,7 +85,7 @@ function InfoContainer() {
     })
 
     //if error occurs, display error alert
-    .catch(err => alert("The weather is not available"))
+    .catch(TypeError => alert("The weather is not available"))
 }
 
 //Variables to display date for the next days
@@ -105,4 +105,3 @@ function CheckDay(day){
 for (i = 0; i < 6; i++) {
     document.getElementById("day" + (i + 1)).innerHTML = weekDay[CheckDay(i)];
 }
-
