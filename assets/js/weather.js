@@ -1,3 +1,12 @@
+//variables for the homework
+var apiCord = "http://api.openweathermap.org/data/2.5/onecall";
+var cityHistory = document.querySelector(".history");
+var apiForecast = "http://api.openweathermap.org/data/2.5/forecast?q=";
+var apiKey = "b67ddd28f3d948a8618b521e9e267d64";
+var apiWeather = "https://api.openweathermap.org/data/2.5/weather";
+var time = new Date();
+var weekDay = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday",];
+
 //function for Home Screen
 function homeScreen() {
     document.getElementById("locationInput").defaultValue = "Irvine";
@@ -15,17 +24,20 @@ function displayTime(){
 
 displayTime();
 
-
 //function to get Weather API info for the click button
 
 function InfoContainer() {
+
+    // var for city search and history
+
     var newSearch = document.getElementById("locationInput");
     var locationName = document.getElementById("locationName");
     locationName.innerHTML = newSearch.value;
-    
-    //fetch data from Weather API
 
-    fetch("http://api.openweathermap.org/data/2.5/forecast?q=" + newSearch.value + "&appid=b67ddd28f3d948a8618b521e9e267d64")
+
+    //fetch data from Weather API using searched city name
+
+    fetch(apiForecast + newSearch.value + "&appid=" + apiKey)
     .then(response => response.json())
     .then(data => {
         
@@ -80,28 +92,19 @@ function InfoContainer() {
             //console.log(windSpeed)
 
             document.getElementById("day" + (i + 1) + "Wind").innerHTML = "Wind Speed: " + Number(windSpeed).toFixed(1) + "m/h";
-        }
-
-    })
+        } 
+    }) 
 
     //if error occurs, display error alert
-    .catch(err=> alert("The weather is not available"))
+    .catch(err => alert("The weather is not available"))
 }
-
-//Variables to display date for the next days
-
-var time = new Date();
-var weekDay = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday",];
 
 //Function to display the correct date
 function CheckDay(day){
     if(day + time.getDay() > 6) {
         return day + time.getDay() - 7;
-    } else {
-        return day + time.getDay();
-    }
-}
-
-for (i = 0; i < 6; i++) {
+    }  else {
+        return day +time.getDay();
+}} for (i = 0; i < 6; i++) {
     document.getElementById("day" + (i + 1)).innerHTML = weekDay[CheckDay(i)];
 }

@@ -24,21 +24,30 @@ body {
     margin: 20px; 
 }
 
-.history {
-    display: flex;
-    background: midnightblue;
-    border-radius: 10px;
-    padding: 10px;
-    margin: 10px;
-
-}
-
 img {
     max-height: 150px;
     max-width: 200px;
     width: 120px;
     height: 120px;
 
+}
+
+#title {
+    border-radius: 10px;
+    padding: 10px;
+    width: 400px;
+    background: azure;
+    margin: auto;
+    font-size: 24px;
+}
+
+#locationName {
+    border-radius: 10px;
+    padding: 10px;
+    width: 200px;
+    background: azure;
+    margin: auto;
+    font-size: 24px;
 }
 
 #currentcontainer {

@@ -13,9 +13,6 @@
     <p id="searchContainer">Location: <input type="text" id="locationInput"><button type="button" onclick="InfoContainer()"> Search </button></p>
     <p id="currentDay" class="lead"></p>
     <h2 id="locationName">Location</h2>
-    <div class="history">
-        <h3> Previous Searches </h3>
-    </div>
     </div>
 
     <div id="currentcontainer">
@@ -24,6 +21,7 @@
             <div class="icon">
                 <p class="weather" id="day1"></p>
                 <div class="image"><img src="" class= "img" id="img1"></div>
+                <p class="description" id="day1Description">Gathering...</p>
                 <p class="lowTemp" id="day1Low">Gathering...</p>
                 <p class="highTemp" id="day1High">Gathering...</p>
                 <p class="humidity" id="day1Humid">Gathering...</p>
@@ -37,6 +35,7 @@
             <div class="icon">
                 <p class="weather" id="day2"></p>
                 <div class="image"><img src="" class= "img" id="img2"></div>
+                <p class="description" id="day2Description">Gathering...</p>
                 <p class="lowTemp" id="day2Low">Gathering...</p>
                 <p class="maxTemp" id="day2High">Gathering...</p>
                 <p class="humidity" id="day2Humid">Gathering...</p>
@@ -50,6 +49,7 @@
             <div class="icon">
                 <p class="weather" id="day3"></p>
                 <div class="image"><img src="" class= "img" id="img3"></div>
+                <p class="description" id="day3Description">Gathering...</p>
                 <p class="lowTemp" id="day3Low">Gathering...</p>
                 <p class="highTemp" id="day3High">Gathering...</p>
                 <p class="humidity" id="day3Humid">Gathering...</p>
@@ -97,7 +97,6 @@
     </div>
 
     <script src="./assets/js/weather.js"></script>
-    <script src="./assets/js/currentweather.js"></script>
 
     </body>
 </html>
