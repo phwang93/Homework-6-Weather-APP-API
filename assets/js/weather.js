@@ -1,6 +1,5 @@
 //variables for the homework
 var apiCord = "http://api.openweathermap.org/data/2.5/onecall";
-var cityHistory = document.querySelector(".history");
 var apiForecast = "http://api.openweathermap.org/data/2.5/forecast?q=";
 var apiKey = "b67ddd28f3d948a8618b521e9e267d64";
 var apiWeather = "https://api.openweathermap.org/data/2.5/weather";
@@ -40,6 +39,15 @@ function InfoContainer() {
     fetch(apiForecast + newSearch.value + "&appid=" + apiKey)
     .then(response => response.json())
     .then(data => {
+        
+        //Getting the temps(min,max) for each day
+        for(i =0; i < 6; i++) {
+
+            var description = data.list[i].weather[0].description;
+
+            // Displaying the description for each day
+            document.getElementById("day" + (i + 1) + "Description").innerHTML = description;
+        }
         
         //Getting the temps(min,max) for each day
         for(i =0; i < 6; i++) {
