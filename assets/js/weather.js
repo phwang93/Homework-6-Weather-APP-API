@@ -85,7 +85,7 @@ function InfoContainer() {
     })
 
     //if error occurs, display error alert
-    .catch(TypeError => alert("The weather is not available"))
+    .catch(err=> alert("The weather is not available"))
 }
 
 //Variables to display date for the next days
