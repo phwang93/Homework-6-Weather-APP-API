@@ -116,3 +116,11 @@ function CheckDay(day){
 }} for (i = 0; i < 6; i++) {
     document.getElementById("day" + (i + 1)).innerHTML = weekDay[CheckDay(i)];
 }
+
+// Add Event listener to "enter"
+
+document.querySelector("#searchContainer").addEventListener("keyup", function (event) {
+    if (event.key == "Enter") {
+      InfoContainer();
+    }
+  });
