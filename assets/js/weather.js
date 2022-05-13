@@ -1,11 +1,12 @@
 //variables for the homework
 var apiCord = "http://api.openweathermap.org/data/2.5/onecall";
 var apiForecast = "http://api.openweathermap.org/data/2.5/forecast?q=";
-var apiKey = "b67ddd28f3d948a8618b521e9e267d64";
+var apiKey = "417add85ce58d55752a092f3601f8fdb";
 var apiWeather = "https://api.openweathermap.org/data/2.5/weather";
 var time = new Date();
 var weekDay = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday",];
 var searchedCities = JSON.parse(localStorage.getItem("searchedCities"));
+
 //function for Home Screen
 function homeScreen() {
     document.getElementById("locationInput").defaultValue = "Irvine";
