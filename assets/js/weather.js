@@ -5,7 +5,7 @@ var apiKey = "b67ddd28f3d948a8618b521e9e267d64";
 var apiWeather = "https://api.openweathermap.org/data/2.5/weather";
 var time = new Date();
 var weekDay = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday",];
-
+var searchedCities = JSON.parse(localStorage.getItem("searchedCities"));
 //function for Home Screen
 function homeScreen() {
     document.getElementById("locationInput").defaultValue = "Irvine";
@@ -32,6 +32,8 @@ function InfoContainer() {
     var newSearch = document.getElementById("locationInput");
     var locationName = document.getElementById("locationName");
     locationName.innerHTML = newSearch.value;
+    localStorage.setItem('searchedCities', JSON.stringify(newSearch));
+    console.log(searchedCities)
 
 
     //fetch data from Weather API using searched city name

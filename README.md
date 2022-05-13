@@ -47,4 +47,4 @@ API Call
 
 # Github Links:
 - Repository: https://github.com/phwang93/Homework-6-Weather-APP-API
-- Deployed HTML: 
+- Deployed HTML: https://phwang93.github.io/Homework-6-Weather-APP-API/
