@@ -1,6 +1,6 @@
 //variables for the homework
-var apiCord = "http://api.openweathermap.org/data/2.5/onecall";
-var apiForecast = "http://api.openweathermap.org/data/2.5/forecast?q=";
+var apiCord = "https://api.openweathermap.org/data/2.5/onecall";
+var apiForecast = "https://api.openweathermap.org/data/2.5/forecast?q=";
 var apiKey = "417add85ce58d55752a092f3601f8fdb";
 var apiWeather = "https://api.openweathermap.org/data/2.5/weather";
 var time = new Date();
